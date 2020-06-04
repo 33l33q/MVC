@@ -17,7 +17,7 @@
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-      <title>모든 글 조회하기</title>
+      <title>전체 글 조회하기</title>
       
       
 	<script type="text/javascript" 
@@ -47,35 +47,28 @@
 
     </script>
         		
-<!--
          <style type="text/css">
             .tt{
             text-align : center;
             font-weight : bold;
             }
          </style>
-      
-  -->         
+       
    </head>
 
    <body>
-
       <form id="boardForm" name="boardForm" method="post" enctype="application/x-www-form-urlencoded">
-         <table border ="1" align="center">
-
+         <table border ="1" align="center"  width="1000">
          	    <tr>
-	               <td colspan ="16" align = "center">
-	               <h3>작성 글 보기</h3></td>
+	               <td colspan="16" align="center"><h3>전체 글 보기</h3></td>
 	            </tr>
 
 	            <tr>
 					<td class="tt">              
-					 
 					<td class="tt">글번호</td>
-					<td class="tt">제목</td>
-					<td class="tt">이름</td>
-					<td class="tt">내용</td>
-					<td class="tt">사진</td>
+					<td class="tt" width="500">제목</td>
+					<td class="tt">작성자</td>
+					<td class="tt">썸네일</td>
 					<td class="tt">입력일</td>
 					<td class="tt">수정일</td>			
 				</tr>
@@ -103,17 +96,15 @@
        
                <td align="center">
                <input type="checkbox" name="chkInLno" id="chkInLno"   value=<%= lbvo.getLno() %> onclick="checkOnly(this)"></td>
-               <td><%=lbvo.getLno()%></td>
-               <td><%=lbvo.getLsubject()%></td>
-               <td><%=lbvo.getLname()%></td>
+               <td align="center"><%=lbvo.getLno()%></td>
+               <td align="left">&nbsp;&nbsp;<%=lbvo.getLsubject()%></td>
+               <td align="center"><%=lbvo.getLname()%></td>
                <input type="hidden" name="lpw" id="lpw" value="<%=lbvo.getLpw()%>">
-               <td><%=lbvo.getLmemo()%></td>
-               
                <% System.out.println(lbvo.getLphoto()); %>
-               <td><img src="<%=lbvo.getLphoto()%>" border=0 width="30" height="40"></td>
+               <td  align="center"><img src="<%=lbvo.getLphoto()%>" width="30" onerror="this.src='/photo/none.jpg'"></td>
                <input type="hidden" name="ldeleteYN" id="ldeleteYN" value="<%=lbvo.getLdeleteYN()%>">
-               <td><%=lbvo.getLinsertdate()%></td>
-               <td><%=lbvo.getLupdatedate()%></td>
+               <td  align="center"><%=lbvo.getLinsertdate()%></td>
+               <td  align="center"><%=lbvo.getLupdatedate()%></td>
          
             </tr>
 

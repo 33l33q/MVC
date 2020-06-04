@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-		<title>index</title>
+		<title>개인정보 수정창</title>
 		
 			 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script>
@@ -50,8 +50,7 @@
 		
 		                // 우편번호와 주소 정보를 해당 필드에 넣는다.
 		                document.getElementById('lpostno').value = data.zonecode; //5자리 새우편번호 사용
-		                document.getElementById('ljuso').value = fullRoadAddr;
-		                document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
+		                document.getElementById('lloadAddr').value = fullRoadAddr;
 		
 		                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
 		                if(data.autoRoadAddress) {
@@ -72,8 +71,7 @@
 		</script>
 	</head>
 	
-     <script type="text/javascript" 
-           src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
      <script type="text/javascript">
      
 	     $(document).ready(function(){
@@ -87,19 +85,20 @@
 	            	
 	               	alert("수정하시겠습니까?");   
 	               	
+
 	               	$("#updateForm")
-	               	.attr("action","./BoardControllerServlet")
+	               	.attr("action","./MemberControllerServlet")
 	               	.submit();
+
 	            });
 	            
 	            $("#return").click(function(){
 	      	
 	               	alert("로그인 확인페이지로 돌아갑니다");  
 	        
-	               	
 		      		var ISUD = $("#ISUD").val("L");
 		    		$("#updateForm")
-		    		.attr("action","./BoardControllerServlet")
+		    		.attr("action","./MemberControllerServlet")
 		    		.submit();
 	               	
 	            });
@@ -126,70 +125,95 @@
 		String lbirth = sList.get(5);
 		String lemail = sList.get(6);
 		String lpostno = sList.get(7);
-		String ljuso = sList.get(8);
-		String lphoto = sList.get(9);
+		String lloadAddr = sList.get(8);
+		String laddr = sList.get(9);
+		String lphoto = sList.get(10);
 		
-		System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso );
+		String[] lemailArray = lemail.split("@");
+		String lemailId = lemailArray[0];
+		String lemailSite = lemailArray[1];
+		
+		System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr + laddr);
 
 %>
+
 		<form name="updateForm" id="updateForm" method="POST" enctype="multipart/form-data">
-			<table border="1"  align="center">
-				<tr>
-					<td colspan="2"><h3>회원정보</h3></td>
-				</tr>
-				<tr>
-					<td>회원번호</td>
-					<td><input type="text" name ="lmem" id="lmem" value=<%=lmem%> readonly></td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td><input type="text" name ="lname" id="lname" value=<%=lname%> readonly></td>
-				</tr>
-				<tr>
-					<td>아이디</td>
-					<td><input type="text" name="lid" id="lid" size="20" value=<%=lid%> readonly></td>
-				</tr>
-				<tr>
-					<td>비밀번호</td>
-					<td><input type="password" name="lpw" id="lpw" size="20" value=<%=lpw%> readonly></td>
-				</tr>
-				<tr>
-					<td>전화번호</td>
-					<td><input type="text" name="lhp" id="lhp" value=<%=lhp%>></td>
-				</tr>
-				<tr>
-					<td>생년월일</td>
-					<td><input type="text" name="lbirth" id="lbirth" value=<%=lbirth%>></td>
-				</tr>
-				<tr>
-					<td>이메일</td>
-					<td><input type="text" name="lemail" id="lemail" value=<%=lemail%>></td>
-				</tr>
-				<tr>
-					<td>우편번호</td>
-					<td><input type="text" name="lpostno" id="lpostno" value=<%=lpostno%>>
-               			<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-						<span id="guide" style="color:#999"></span></td>
-				</tr>
-				<tr>
-					<td>주소</td>
-					<td><input type="text" name="ljuso" id="ljuso" value="<%=ljuso%>" size=50></td>
-				</tr>
-				<tr>
-					<td>사진</td>
-					<td>
-					<img src=<%=lphoto%> border=0 width="30" height="40">
-					<input type="file" name="lphoto" id="lphoto" value=<%=lphoto%> >
-					</td>
-				</tr>
-				<tr>
-               		<td align="center" colspan="2">
-	                  <input type="button" value="수정" id="U_member" name="U_member">
-					  <input type="button" value="돌아가기" id="return" name="return">
-	                  <input type="hidden" id="ISUD" name="ISUD">
-	                  <input type="reset" value="다시쓰기"> </td>
-	            </tr>
-				</table>
+			<table border="1"align="center">
+			  <tbody>
+			  	  <tr>
+			  	  <td colspan ="3" align="center"><h3>회원정보</h3></td>
+				  <tr>
+				   <td rowspan="5" width="200" align="center"> <img src="../../<%=lphoto%>" height="150">
+				   					<input type="file" name="lphoto" id="lphoto" value=<%=lphoto%>>
+				   					<input type="hidden" name="reLphoto" id="reLphoto" value="<%=lphoto%>"></td>
+				    <td width="200"align="center"><b>회원번호</b></td>
+				    <td  width="300">&nbsp;<%=lmem%><input type="hidden" name ="lmem" id="lmem" value=<%=lmem%>></td>
+				  </tr>
+				  <tr>
+				    <td align="center"><b>이름</b></td>
+   				    <td>&nbsp;<%=lname%><input type="hidden" name ="lname" id="lname" value=<%=lname%>></td>
+				  </tr>
+				  <tr>
+				    <td align="center"><b>아이디</b></td>
+				    <td>&nbsp;<%=lid%><input type="hidden" name="lid" id="lid" size="20" value=<%=lid%>></td>
+				  </tr>
+				  <tr>
+				    <td align="center"><b>비밀번호</b></td>
+				    <td>&nbsp;<input type="password" name="lpw" id="lpw" size="20" value=<%=lpw%>>
+				    		  <input type="hidden" name="checkLpw" id="checkLpw" size="20" value=<%=lpw%>>
+				    </td>
+				  </tr>
+				  <tr>
+				    <td align="center"><b>전화번호</b></td>
+				    <td>&nbsp;<input type="text" name="lhp" id="lhp" value=<%=lhp%>></td>
+				  </tr>
+				  <tr>
+				    <td height="30" align="center"><b>생년월일</b></td>
+				    <td colspan="2">&nbsp;<input type="text" name="lbirth" id="lbirth" value=<%=lbirth%>></td>
+				  </tr>
+				  <tr>
+				    <td height="30" align="center" > <b> 이메일 </b></td>
+				    <td colspan="2">&nbsp;<input type="text" name="lemailId" id="lemailId" value=<%=lemailId%>> @
+				                     <select name="selectEmail" id="selectEmail" >
+				                         <option value=<%=lemailSite %> selected><%=lemailSite %></option>
+				                              <option value="naver.com">naver.com</option>
+				                              <option value="hanmail.net">hanmail.net</option>
+				                              <option value="hotmail.com">hotmail.com</option>
+				                              <option value="nate.com">nate.com</option> 
+				                              <option value="yahoo.co.kr">yahoo.co.kr</option> 
+				                              <option value="empas.com">empas.com</option> 
+				                              <option value="dreamwiz.com">dreamwiz.com</option> 
+				                              <option value="freechal.com">freechal.com</option> 
+				                              <option value="lycos.co.kr">lycos.co.kr</option> 
+				                              <option value="korea.com">korea.com</option> 
+				                              <option value="gmail.com">gmail.com</option> 
+				                              <option value="hanmir.com">hanmir.com</option> 
+				                              <option value="paran.com">paran.com</option> </td>
+				  </tr>
+				  <tr>
+				    <td height="30" align="center" > <b>우편번호</b></td>
+				    <td colspan="2">&nbsp;<input type="text" name="lpostno" id="lpostno" value=<%=lpostno%>>
+                        <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                  <span id="guide" style="color:#999"></span></td>
+				  </tr>
+				  <tr>
+				    <td height="30" align="center" > <b>도로명 주소 </b></td>
+				    <td colspan="2">&nbsp;<input type="text" name="lloadAddr" id="lloadAddr" value="<%=lloadAddr%>" size=50></td>
+				  </tr>
+				  <tr>
+				    <td height="30" align="center" > <b>상세 주소 </b></td>
+				    <td colspan="2">&nbsp;<input type="text" name="laddr" id="laddr" value="<%=laddr%>" size=50></td>
+				  </tr>
+				      <tr>
+                     <td height="30" align="center" colspan="3">
+                     <input type="button" value="수정" id="U_member" name="U_member">
+                 	 <input type="button" value="돌아가기" id="return" name="return">
+                     <input type="hidden" id="ISUD" name="ISUD">
+                     <input type="reset" value="다시쓰기"> </td>
+               </tr>
+				  
+			  </tbody>
+			</table>
 		</form>
 	</body>
 </html>

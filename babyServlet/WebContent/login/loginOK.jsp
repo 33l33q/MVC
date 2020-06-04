@@ -10,8 +10,11 @@
 <%@ page import = "java.util.ArrayList" %>
 
 <%
-	String lid = request.getParameter("lid");
-	String lpw = request.getParameter("lpw");
+//	String lid = request.getParameter("lid");
+//	String lpw = request.getParameter("lpw");
+
+	String lid = (String)request.getAttribute("lid");
+	String lpw = (String)request.getAttribute("lpw");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -60,6 +63,19 @@
 	                .attr("action","./BoardControllerServlet")
 	                .submit();
 	      		});
+	      		
+	      		$("#L").click(function(){
+	      			
+	            	$("#ISUD").val('L');
+	            	$("#lid").val("");
+	            	$("#lpw").val("");
+	            	
+	            	
+	                alert("·Î±×¾Æ¿ô");
+	                $("#loginOK")
+	                .attr("action","./MemberControllerServlet")
+	                .submit();
+	      		});
 	      	});
 	      
 	      
@@ -79,6 +95,7 @@
 						<input type="button" id="U" name="U" value="°³ÀÎÁ¤º¸ ¼öÁ¤">
 						<input type="button" id="D" name="D" value="È¸¿øÅ»Åð">
 						<input type="button" id="B" name="B" value="°Ô½ÃÆÇ">
+						<input type="button" id="L" name="L" value="·Î±×¾Æ¿ô">
 					</td>
 				</tr>
 			</table>

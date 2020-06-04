@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-		<title>index</title>
+		<title>삭제하기</title>
 	</head>	
 	<body>
 	
@@ -31,7 +31,7 @@
 				alert("회원탈퇴");
 				
       			$("#updateForm")
-      			.attr("action","../BoardControllerServlet")
+      			.attr("action","../MemberControllerServlet")
       			.submit();
     		});
     		
@@ -42,7 +42,7 @@
                	
 	      		var ISUD = $("#ISUD").val("L");
 	    		$("#updateForm")
-	    		.attr("action","./BoardControllerServlet")
+	    		.attr("action","./MemberControllerServlet")
 	    		.submit();
                	
             });
@@ -65,10 +65,11 @@
 		String lbirth = sList.get(5);
 		String lemail = sList.get(6);
 		String lpostno = sList.get(7);
-		String ljuso = sList.get(8);
-		String lphoto = sList.get(9);
+		String lloadAddr  = sList.get(8);
+		String laddr   = sList.get(9);
+		String lphoto = sList.get(10);
 		
-		System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso );
+		System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr + laddr );
 
 %>
 		<form name="updateForm" id="updateForm" method="POST" enctype="multipart/form-data">
@@ -109,8 +110,12 @@
 						<td><%=lpostno%></td>
 					</tr>
 					<tr>
-						<td>주소</td>
-						<td><%=ljuso%></td>
+						<td>지번주소</td>
+						<td><%=lloadAddr %></td>
+					</tr>
+					<tr>
+						<td>상세 주소</td>
+						<td><%=laddr %></td>
 					</tr>
 					<tr>
 						<td>사진</td>

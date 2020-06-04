@@ -111,12 +111,12 @@
 
 %>
 		<form name="boardUpdate" id="boardUpdate" method="post"  enctype="multipart/form-data">
-			<table border="1" align="center">
+			<table border="1" align="center" height="300">
 				<tr>
-					<td colspan="2" align="center"> 수정하기 </td>
+					<td colspan="2" align="center"><h3>글 수정하기</h3></td>
 				</tr>
 				<tr>
-					<td align="center">글번호</td>
+					<td align="center" >글번호</td>
 					<td><input type="text" name="lno" id="lno" size="20"  value="<%=lno%>" readonly></td>
 				</tr>
 				<tr>
@@ -141,7 +141,7 @@
 				</tr>
 				<tr>
 					<td colspan="3" align="center">
-					<textarea name="lmemo" id="lmemo" rows="5" cols="55" class="js-sms-content"><%=lmemo%></textarea>
+					<textarea name="lmemo" id="lmemo" rows="16" cols="100" class="js-sms-content"><%=lmemo%></textarea>
 					<div class = "bytes-wrapper">
 						<span class="bytes">0</span>bytes
 					</div>

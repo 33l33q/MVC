@@ -59,7 +59,8 @@ public class MemberControllerServlet extends HttpServlet {
       String lbirth = "";
       String lemail = "";
       String lpostno = "";
-      String ljuso = "";
+      String lloadAddr = "";
+      String laddr = "";
       String ldeleteYN ="";
       String linsertdate = "";
       String lupdatedate = "";
@@ -94,7 +95,11 @@ public class MemberControllerServlet extends HttpServlet {
 	      
 	    	  //로그인
 	          if(aList.size()==1){
-	              System.out.print("로그인 성공!");
+	              System.out.print("파일이 없는 로그인 성공!");
+	              
+	              request.setAttribute("lid", lid);
+	              request.setAttribute("lpw", lpw);
+	                
 	              RequestDispatcher rd = request.getRequestDispatcher("/login/loginOK.jsp");
 	              rd.forward(request, response);
 	          }
@@ -119,9 +124,7 @@ public class MemberControllerServlet extends HttpServlet {
         	  lvo_S.setLid(lid);
         	  lvo_S.setLpw(lpw);
         	  
-        	  
         	  aList = ldao.searchLdbMember(lvo_S);
-        	  
         	  
               lvo = aList.get(0);
               
@@ -133,10 +136,11 @@ public class MemberControllerServlet extends HttpServlet {
               lbirth = lvo.getLbirth();
               lemail = lvo.getLemail();
               lpostno = lvo.getLpostno();
-              ljuso = lvo.getLjuso();
+              lloadAddr = lvo.getLloadAddr();
+              laddr = lvo.getLaddr();
               lphoto = lvo.getLphoto();
               
-              System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso +lphoto);
+              System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr + laddr+lphoto);
               
               ArrayList<String> sList = new ArrayList<String>();
               sList.add(lmem);
@@ -147,7 +151,8 @@ public class MemberControllerServlet extends HttpServlet {
               sList.add(lbirth);
               sList.add(lemail);
               sList.add(lpostno);
-              sList.add(ljuso);
+              sList.add(lloadAddr);
+              sList.add(laddr);
               sList.add(lphoto);
               
               
@@ -182,13 +187,14 @@ public class MemberControllerServlet extends HttpServlet {
               lbirth = lvo.getLbirth();
               lemail = lvo.getLemail();
               lpostno = lvo.getLpostno();
-              ljuso = lvo.getLjuso();
+              lloadAddr = lvo.getLloadAddr();
+              laddr = lvo.getLaddr();
               lphoto = lvo.getLphoto();
               
-              System.out.println(lmem + lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso );
+              System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr + laddr+lphoto);
               
               ArrayList<String> sList = new ArrayList<String>();
-              sList.add(lmem);request.setAttribute("lid",lid);
+              sList.add(lmem);
               sList.add(lname);
               sList.add(lid);
               sList.add(lpw);
@@ -196,12 +202,11 @@ public class MemberControllerServlet extends HttpServlet {
               sList.add(lbirth);
               sList.add(lemail);
               sList.add(lpostno);
-              sList.add(ljuso);
+              sList.add(lloadAddr);
+              sList.add(laddr);
               sList.add(lphoto);
               
-              
               request.setAttribute("sList", sList);
-              
               
               RequestDispatcher rd = request.getRequestDispatcher("/login/deleteMember.jsp");
               rd.forward(request, response);
@@ -234,7 +239,7 @@ public class MemberControllerServlet extends HttpServlet {
           
 	   	      if("L".equals(ISUD.toUpperCase())){
 	   	    	  
-	   	    	 System.out.println("로그인");
+	   	    	 System.out.println("이미지 로그인");
 
                 lid = mr.getParameter("lid");
                 lpw = mr.getParameter("lpw");
@@ -253,13 +258,14 @@ public class MemberControllerServlet extends HttpServlet {
 	           
 	   	    	  //로그인
 	   	          if(aList.size()==1){
- 	                System.out.print("로그인 성공!");
-                    
-                    RequestDispatcher rd = request.getRequestDispatcher("../login/loginOK.jsp");
+ 	                System.out.print("이미지 파일이 있는 로그인 성공!");
+ 	                
+ 	                request.setAttribute("lid", lid);
+ 	                request.setAttribute("lpw", lpw);
+ 	                
+                    RequestDispatcher rd = request.getRequestDispatcher("/login/loginOK.jsp");
                     rd.forward(request, response);
 		              
-	   	              //response.sendRedirect("/babyServlet/login/loginOK.jsp?lid="+lid+"&lpw="+lpw);
-	   	           
 	   	          }
 	   	          
 	   	          if(aList.size()!=1) {
@@ -291,11 +297,12 @@ public class MemberControllerServlet extends HttpServlet {
                lpw = mr.getParameter("lpw");
                lhp = mr.getParameter("lhp");
                lbirth = mr.getParameter("lbirth");
-               lemail = mr.getParameter("emailId") + "@" + mr.getParameter("selectEmail");
+               lemail = mr.getParameter("lemailId") + "@" + mr.getParameter("selectEmail");
                lpostno = mr.getParameter("lpostno");
-               ljuso = mr.getParameter("ljuso");
-                     
-               System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso );
+               lloadAddr =  mr.getParameter("lloadAddr");
+               laddr =  mr.getParameter("laddr");
+
+               System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr + laddr );
             
                lvo.setLname(lname);
                lvo.setLid(lid);
@@ -304,7 +311,8 @@ public class MemberControllerServlet extends HttpServlet {
                lvo.setLbirth(lbirth);
                lvo.setLemail(lemail);
                lvo.setLpostno(lpostno);
-               lvo.setLjuso(ljuso);
+               lvo.setLloadAddr(lloadAddr);
+               lvo.setLaddr(laddr);
                lvo.setLphoto(lphoto);
 
                System.out.println("lvo.getLname; " + lvo.getLname());
@@ -313,7 +321,6 @@ public class MemberControllerServlet extends HttpServlet {
                
                if(bFlag){
                   response.sendRedirect("/babyServlet/login/insertOK.jsp");
-                  //RequestDispatcher rd = request.getRequestDispatcher("/login/board.jsp");
                   
                }else{
                   response.sendRedirect("/babyServlet/login/member.jsp");
@@ -335,33 +342,6 @@ public class MemberControllerServlet extends HttpServlet {
 			   RequestDispatcher rd = request.getRequestDispatcher("/login/selectMember.jsp");
 			   rd.forward(request, response);
                
-//               if(aList.size() == 0){
-//                  response.sendRedirect("/babyServlet/login/member.jsp");
-//               
-//               }else{
-//                  
-//                  for(int i = 0; i < aList.size() ; i++){
-//                     
-//                     lvo = aList.get(i);
-//                     
-//                     lmem = lvo.getLmem();
-//                     lname = lvo.getLname();
-//                     lid = lvo.getLid();
-//                     lpw = lvo.getLpw();
-//                     lhp = lvo.getLhp();
-//                     lbirth = lvo.getLbirth();
-//                     lemail = lvo.getLemail();
-//                     lpostno = lvo.getLpostno();
-//                     ljuso = lvo.getLjuso();
-//                     lphoto = lvo.getLphoto();
-//
-//                  }//end of for
-//                  
-//                  response.sendRedirect("/babyServlet/login/selectMember.jsp");
-//               
-//                  RequestDispatcher rd = request.getRequestDispatcher("/login/member.jsp");                  
-//                  rd.forward(request, response);
-//               }// end of select in if
             }//end of select
             
             //정보 수정하기
@@ -369,39 +349,44 @@ public class MemberControllerServlet extends HttpServlet {
             	
             	System.out.println("수정 서블릿 진입");
             	
-                System.out.println("MultipartRequest");
+                System.out.println("MultipartRequest>> 진입");
                 Enumeration en = mr.getFileNames();
                       
                 fileName = (String)en.nextElement();
                 System.out.println("fileName" + fileName);
-                      
+                String checkLpw = "";
                 String fileInput = mr.getFilesystemName(fileName);
                 lphoto = FilePath.DOWNLOAD_FILEPATH + fileInput;
                 
                 System.out.println("fileInput" + fileInput);
                 System.out.println("lphoto" + lphoto);
-                
+          	  
                 lmem = mr.getParameter("lmem");
                 lname = mr.getParameter("lname");
                 lid = mr.getParameter("lid");
                 lpw = mr.getParameter("lpw");
+                checkLpw = mr.getParameter("checkLpw");
                 lhp = mr.getParameter("lhp");
                 lbirth = mr.getParameter("lbirth");
-                lemail = mr.getParameter("lemail");
+                lemail = mr.getParameter("lemailId") + "@" + mr.getParameter("selectEmail");
                 lpostno = mr.getParameter("lpostno");
-                ljuso = mr.getParameter("ljuso");
+                lloadAddr = mr.getParameter("lloadAddr");
+                laddr =  mr.getParameter("laddr");
+
                 
-                System.out.println(lmem + lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso );
+                System.out.println(lmem + lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr + laddr );
                 
                 lvo.setLmem(lmem);
                 lvo.setLname(lname);
                 lvo.setLid(lid);
                 lvo.setLpw(lpw);
+                lvo.setCheckLpw(checkLpw);
                 lvo.setLhp(lhp);
                 lvo.setLbirth(lbirth);
                 lvo.setLemail(lemail);
                 lvo.setLpostno(lpostno);
-                lvo.setLjuso(ljuso);
+                lvo.setLloadAddr(lloadAddr);
+                lvo.setLaddr(laddr);
                 lvo.setLphoto(lphoto);
 
                 System.out.println("alert(lvo.getLname); " + lvo.getLname());
@@ -432,10 +417,11 @@ public class MemberControllerServlet extends HttpServlet {
                     lbirth = lvo.getLbirth();
                     lemail = lvo.getLemail();
                     lpostno = lvo.getLpostno();
-                    ljuso = lvo.getLjuso();
+                    lloadAddr = lvo.getLloadAddr();
+                    laddr = lvo.getLaddr();
                     lphoto = lvo.getLphoto();
                     
-                    System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso );
+                    System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr +  laddr );
                     
                 	Object obj = request.getAttribute("sList");//오브젝트로 받아옴
                 		
@@ -448,7 +434,8 @@ public class MemberControllerServlet extends HttpServlet {
                     sList.add(lbirth);
                     sList.add(lemail);
                     sList.add(lpostno);
-                    sList.add(ljuso);
+                    sList.add(lloadAddr);
+                    sList.add(laddr);
                     sList.add(lphoto);
                     
                     
@@ -511,10 +498,11 @@ public class MemberControllerServlet extends HttpServlet {
 					 lbirth = lvo.getLbirth();
 					 lemail = lvo.getLemail();
 					 lpostno = lvo.getLpostno();
-					 ljuso = lvo.getLjuso();
+		             lloadAddr = lvo.getLloadAddr();
+		             laddr = lvo.getLaddr();
 					 lphoto = lvo.getLphoto();
 					 
-					 System.out.println(lmem + lname + lid + lpw + lhp + lbirth + lemail + lpostno + ljuso );
+					 System.out.println(lmem + lname + lid + lpw + lhp + lbirth + lemail + lpostno +  lloadAddr + laddr );
 					 
 					 ArrayList<String> sList = new ArrayList<String>();
 					 sList.add(lmem);
@@ -525,16 +513,14 @@ public class MemberControllerServlet extends HttpServlet {
 					 sList.add(lbirth);
 					 sList.add(lemail);
 					 sList.add(lpostno);
-					 sList.add(ljuso);
+					 sList.add(lloadAddr);
+					 sList.add(laddr);
 					 sList.add(lphoto);
 					 
-						 
 					 request.setAttribute("sList", sList);
-					 
 					 
 					 RequestDispatcher rd = request.getRequestDispatcher("/login/deleteMember.jsp");
 					 rd.forward(request, response);
-                	
                 }
             	
             }//end of delete
@@ -548,7 +534,7 @@ public class MemberControllerServlet extends HttpServlet {
    
    public boolean checkId(String lid){
          
-      System.out.println("서블릿에 들어옴 >_<");
+      System.out.println("(log)서블릿 진입");
       LdbMemberDAO ldao = new LdbMemberDAOImpl();
       LdbMemberVO lvo = null;
       lvo = new LdbMemberVO();

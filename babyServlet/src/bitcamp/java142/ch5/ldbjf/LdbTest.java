@@ -22,7 +22,8 @@ public class LdbTest {
 		  	System.out.print(" " + lvo.getLbirth());
 		  	System.out.print(" " + lvo.getLemail());
 		  	System.out.print(" " + lvo.getLpostno());
-		  	System.out.print(" " + lvo.getLjuso());
+		  	System.out.print(" " + lvo.getLloadAddr());
+		  	System.out.print(" " + lvo.getLaddr());
 		  	System.out.print(" " + lvo.getLphoto());
 		  	System.out.print(" " + lvo.getLdeleteYN());
 		  	System.out.print(" " + lvo.getLinsertdate());
@@ -124,7 +125,8 @@ public class LdbTest {
 				  	System.out.print(" " + lvo.getLbirth());
 				  	System.out.print(" " + lvo.getLemail());
 				  	System.out.print(" " + lvo.getLpostno());
-				  	System.out.print(" " + lvo.getLjuso());
+				  	System.out.print(" " + lvo.getLloadAddr());
+				  	System.out.print(" " + lvo.getLaddr());
 				  	System.out.print(" " + lvo.getLphoto());
 				  	System.out.print(" " + lvo.getLdeleteYN());
 				  	System.out.print(" " + lvo.getLinsertdate());

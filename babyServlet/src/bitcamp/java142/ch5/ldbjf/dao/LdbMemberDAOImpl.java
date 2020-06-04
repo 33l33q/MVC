@@ -21,7 +21,7 @@ public class LdbMemberDAOImpl implements LdbMemberDAO {
       System.out.println("i_lvo 참조변수 주소값 : " + i_lvo );
       
       System.out.println(" " + i_lvo.getLname() + " " +  i_lvo.getLid()+ " " + i_lvo.getLpw()+ " " + i_lvo.getLhp()
-                   + " " +  i_lvo.getLbirth() + " " + i_lvo.getLemail() + " " + i_lvo.getLpostno() + " " +  i_lvo.getLjuso ());
+                   + " " +  i_lvo.getLbirth() + " " + i_lvo.getLemail() + " " + i_lvo.getLpostno() + " " +  i_lvo.getLloadAddr() +  i_lvo.getLaddr() );
 
          
       Connection con = null;
@@ -52,9 +52,10 @@ public class LdbMemberDAOImpl implements LdbMemberDAO {
          pstmt.setString(6, i_lvo.getLbirth());
          pstmt.setString(7, i_lvo.getLemail());
          pstmt.setString(8, i_lvo.getLpostno());
-         pstmt.setString(9, i_lvo.getLjuso());
-         pstmt.setString(10, i_lvo.getLphoto());
-         pstmt.setString(11, "Y");
+         pstmt.setString(9, i_lvo.getLloadAddr());
+         pstmt.setString(10, i_lvo.getLaddr());
+         pstmt.setString(11, i_lvo.getLphoto());
+         pstmt.setString(12, "Y");
          
          System.out.println("(log) LdbMemberScr.pstmt.executeUpdate() 함수 실행 "); 
          nCnt = pstmt.executeUpdate();
@@ -98,15 +99,16 @@ public class LdbMemberDAOImpl implements LdbMemberDAO {
          System.out.println("EciSqlQueryMap.getInsertQuery() : \n" 
                + LdbSqlQueryMap.getUpdateQuery());    
          
-         pstmt.setString(1, i_lvo.getLhp());
-         pstmt.setString(2, i_lvo.getLbirth());
-         pstmt.setString(3, i_lvo.getLemail());
-         pstmt.setString(4, i_lvo.getLpostno());
-         pstmt.setString(5, i_lvo.getLjuso());
-         pstmt.setString(6, i_lvo.getLphoto());
-         pstmt.setString(7, i_lvo.getLid());
-         pstmt.setString(8, i_lvo.getLpw());
-         System.out.println(i_lvo.getLpw() + " ");
+         pstmt.setString(1, i_lvo.getLpw());
+         pstmt.setString(2, i_lvo.getLhp());
+         pstmt.setString(3, i_lvo.getLbirth());
+         pstmt.setString(4, i_lvo.getLemail());
+         pstmt.setString(5, i_lvo.getLpostno());
+         pstmt.setString(6, i_lvo.getLloadAddr());
+         pstmt.setString(7, i_lvo.getLaddr());
+         pstmt.setString(8, i_lvo.getLphoto());
+         pstmt.setString(9, i_lvo.getLid());
+         pstmt.setString(10, i_lvo.getCheckLpw());
          
          System.out.println("(log) LdbMemberScr.pstmt.executeUpdate() 함수 실행 "); 
          nCnt = pstmt.executeUpdate();
@@ -225,7 +227,8 @@ public class LdbMemberDAOImpl implements LdbMemberDAO {
                lvo.setLbirth(rsRs.getString("LBIRTH"));
                lvo.setLemail(rsRs.getString("LEMAIL"));
                lvo.setLpostno(rsRs.getString("LPOSTNO"));
-               lvo.setLjuso(rsRs.getString("LJUSO"));
+               lvo.setLloadAddr(rsRs.getString("LLOADADDR"));
+               lvo.setLaddr(rsRs.getString("LADDR"));
                lvo.setLphoto(rsRs.getString("LPHOTO"));
                lvo.setLdeleteYN(rsRs.getString("LDELETEYN"));
                lvo.setLinsertdate(rsRs.getString("LINSERTDATE"));
@@ -297,7 +300,8 @@ public class LdbMemberDAOImpl implements LdbMemberDAO {
                   lvo.setLbirth(rsRs.getString("LBIRTH"));
                   lvo.setLemail(rsRs.getString("LEMAIL"));
                   lvo.setLpostno(rsRs.getString("LPOSTNO"));
-                  lvo.setLjuso(rsRs.getString("LJUSO"));
+                  lvo.setLloadAddr(rsRs.getString("LLOADADDR"));
+                  lvo.setLaddr(rsRs.getString("LADDR"));
                   lvo.setLphoto(rsRs.getString("LPHOTO"));
                   lvo.setLdeleteYN(rsRs.getString("LDELETEYN"));
                   lvo.setLinsertdate(rsRs.getString("LINSERTDATE"));
@@ -366,7 +370,8 @@ public class LdbMemberDAOImpl implements LdbMemberDAO {
                   lvo.setLbirth(rsRs.getString("LBIRTH"));
                   lvo.setLemail(rsRs.getString("LEMAIL"));
                   lvo.setLpostno(rsRs.getString("LPOSTNO"));
-                  lvo.setLjuso(rsRs.getString("LJUSO"));
+                  lvo.setLloadAddr(rsRs.getString("LLOADADDR"));
+                  lvo.setLaddr(rsRs.getString("LADDR"));
                   lvo.setLphoto(rsRs.getString("LPHOTO"));
                   lvo.setLdeleteYN(rsRs.getString("LDELETEYN"));
                   lvo.setLinsertdate(rsRs.getString("LINSERTDATE"));

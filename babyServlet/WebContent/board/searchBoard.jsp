@@ -146,39 +146,39 @@
 		</script>
 	<body>
 		<form name="boardSearch" id="boardSearch" method="post" enctype="application/x-www-form-urlencoded">
-			<table border="1" align="center">
+			<table border="1" align="center"  width="800">
 				<tr>
-					<td colspan="2" align="center">상세 글 조회 </td>
+					<td colspan="2" align="center"><h3>상세 글 조회 </h3></td>
 				</tr>
 				<tr>
-					<td align="center">글번호</td>
-					<td><%=lno%></td>
+					<td align="center" width="150"><b>글번호</b></td>
+					<td>&nbsp;&nbsp;<%=lno%></td>
 				</tr>
 				<tr>
-					<td align="center">제목</td>
-					<td><%=lsubject%></td>
+					<td align="center"><b>제목</b></td>
+					<td>&nbsp;&nbsp;<%=lsubject%></td>
 				</tr>
 				<tr>
-					<td align="center">이름</td>
-					<td><%=lname%></td>
+					<td align="center"><b>이름</b></td>
+					<td>&nbsp;&nbsp;<%=lname%></td>
 				</tr>
 				<tr>
-					<td align="center">글 비밀번호</td>
-					<td><input type="password" name="lpw" id="lpw" size="20"></td>
+					<td align="center"><b>비밀번호</b></td>
+					<td>&nbsp;&nbsp;<input type="password" name="lpw" id="lpw" size="20"></td>
 				</tr>
 
 				<tr>
-					<td align="center">내용</td>
-					<td><%=lmemo%></td>
+					<td align="center" valign="top" height="300"><b>내용</b></td>
+					<td valign="top">&nbsp;&nbsp;<%=lmemo%></td>
 					
 				</tr>
 				<tr>
-	               <td align="center">사진</td>
-					<td><img src=<%=lphoto%> border=0 width="30" height="40"></td>
+	               <td align="center"><b>사진</b></td>
+					<td>&nbsp;&nbsp;<img src=<%=lphoto%> border=0></td>
                 </tr>
                 <tr>
-					<td align="center" colspan="2">입력일 : <%=linsertdate%>
-							수정일 : <%=lupdatedate%></td>
+					<td align="center" colspan="2"><b>입력일</b> : <%=linsertdate%>
+							    <b>수정일</b> : <%=lupdatedate%></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center">

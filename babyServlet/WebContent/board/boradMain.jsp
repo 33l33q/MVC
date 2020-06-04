@@ -91,45 +91,45 @@
 		
 	</head>
 	<body>
-		<form name="boardWrite" id="boardWrite" method="post"  enctype="multipart/form-data">
-			<table border="1" align="center">
+		<form name="boardWrite" id="boardWrite" method="post" enctype="multipart/form-data">
+			<table border="1" align="center" width="800">
 				<tr>
-					<td colspan="2" align="center">M2_ISUD게시판 </td>
+					<td colspan="2" align="center"><h3>M2_ISUD게시판 </h3></td>
 				</tr>
 				<tr>
-					<td align="center">글번호</td>
+					<td align="center"><b>글번호</b></td>
 					<td><input type="text" name="lno" id="lno" size="20" disabled></td>
 				</tr>
 				<tr>
-					<td align="center">제목</td>
+					<td align="center"><b>제목</b></td>
 					<td><input type="text" name="lsubject" id="lsubject" size="53"></td>
 				</tr>
 				<tr>
-					<td align="center">이름</td>
+					<td align="center"><b>이름</b></td>
 					<td><input type="text" name="lname" id="lname" size="53"></td>
 				</tr>
 				<tr>
-					<td align="center">글 비밀번호</td>
+					<td align="center"><b>글 비밀번호</b></td>
 					<td><input type="text" name="lpw" id="lpw" size="20"></td>
 				</tr>
 				<tr>
-					<td align="center">입력일</td>
+					<td align="center"><b>입력일</b></td>
 					<td><input type="text" name="linsertdate" id="linsertdate" size="20" disabled></td>
 				</tr>
 				<tr>
-					<td align="center">수정일</td>
+					<td align="center"><b>수정일</b></td>
 					<td><input type="text" name="lupdatedate" id="lupdatedate" size="20" disabled></td>
 				</tr>
 				<tr>
-					<td colspan="3" align="center">
-					<textarea name="lmemo" id="lmemo" rows="5" cols="55" class="js-sms-content"></textarea>
+					<td colspan="3" align="center" height="300">
+					<textarea name="lmemo" id="lmemo" rows="16" cols="100" class="js-sms-content"></textarea>
 					<div class = "bytes-wrapper">
 						<span class="bytes">0</span>bytes
 					</div>
 					</td>										
 				</tr>
 				<tr>
-	               <td align="center">사진</td>
+	               <td align="center"><b>사진</b></td>
 	               <td>&nbsp;<input type="file" name="lphoto" id="lphoto"></td>
                 </tr>
 				<tr>

@@ -134,7 +134,7 @@ public class BoardControllerServlet extends HttpServlet {
 			//수정 페이지로 가기
             if("U".equals(ISUD.toUpperCase())){
             	
-            	System.out.println("수정페이지루 왔다네");
+            	System.out.println("(log) 수정 페이지 진입");
 
 				lno = request.getParameter("lno");
 				System.out.println("lno >>> " + lno);

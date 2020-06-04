@@ -11,12 +11,21 @@ public class LdbMemberVO {
 	private String lbirth;
 	private String lemail;
 	private String lpostno;
-	private String ljuso;
+	private String lloadAddr;
+	private String laddr;
 	private String lphoto;
 	private String ldeleteYN;
 	private String linsertdate;
 	private String lupdatedate;
+	private String checkLpw; //비밀번호 수정을 위한 비밀번호 확인용
 	
+	
+	public String getCheckLpw() {
+		return checkLpw;
+	}
+	public void setCheckLpw(String checkLpw) {
+		this.checkLpw = checkLpw;
+	}
 	public String getLmem() {
 		return lmem;
 	}
@@ -65,11 +74,17 @@ public class LdbMemberVO {
 	public void setLpostno(String lpostno) {
 		this.lpostno = lpostno;
 	}
-	public String getLjuso() {
-		return ljuso;
+	public String getLloadAddr() {
+		return lloadAddr;
 	}
-	public void setLjuso(String ljuso) {
-		this.ljuso = ljuso;
+	public void setLloadAddr(String lloadAddr) {
+		this.lloadAddr = lloadAddr;
+	}
+	public String getLaddr() {
+		return laddr;
+	}
+	public void setLaddr(String laddr) {
+		this.laddr = laddr;
 	}
 	public String getLphoto() {
 		return lphoto;
