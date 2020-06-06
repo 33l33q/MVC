@@ -7,7 +7,6 @@
 <%@ page import ="bitcamp.java142.board.Servlet.BoardControllerServlet" %>
 <%@ page import ="bitcamp.java142.common.utils.FilePath" %>
 
-
 <%@ page import ="java.util.ArrayList" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -15,9 +14,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 		<title>수정하기</title>
 	</head>
-	
-     <script type="text/javascript" 
-           src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
      <script type="text/javascript">
      
 	$(document).ready(function(){
@@ -71,19 +68,14 @@
 		function cut_300(obj){
 			var text = $(obj).val();
 			var leng = text.length;
-			while(getTextLength(text) > 300){
+			while(getTextLength(text) > 2000){
 				leng--;
 				text = text.substring(0, leng);
 			}
 			$(obj).val(text);
 			$('.bytes').text(getTextLength(text));
 		}
-
-		
 	});
-     
-     	
-     
      
      </script>
      
@@ -111,12 +103,12 @@
 
 %>
 		<form name="boardUpdate" id="boardUpdate" method="post"  enctype="multipart/form-data">
-			<table border="1" align="center" height="300">
+			<table border="1" align="center" width="800">
 				<tr>
 					<td colspan="2" align="center"><h3>글 수정하기</h3></td>
 				</tr>
 				<tr>
-					<td align="center" >글번호</td>
+					<td align="center" width="150">글번호</td>
 					<td><input type="text" name="lno" id="lno" size="20"  value="<%=lno%>" readonly></td>
 				</tr>
 				<tr>
@@ -149,7 +141,7 @@
 				</tr>
 				<tr>
 	               <td align="center">사진</td>
-	               <td><img src="<%=lphoto%>" width="10" height="10">
+	               <td><img src="../<%=lphoto%>" style="max-width:90%;">
 	               &nbsp;<input type="file" name="lphoto" id="lphoto" value="<%=lphoto %>"></td>
                 </tr>
 				<tr>

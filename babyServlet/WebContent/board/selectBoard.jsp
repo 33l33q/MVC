@@ -60,7 +60,7 @@
       <form id="boardForm" name="boardForm" method="post" enctype="application/x-www-form-urlencoded">
          <table border ="1" align="center"  width="1000">
          	    <tr>
-	               <td colspan="16" align="center"><h3>전체 글 보기</h3></td>
+	               <td colspan="16" align="center"><h3>전체 글 목록</h3></td>
 	            </tr>
 
 	            <tr>
@@ -90,10 +90,8 @@
       
       for(int i = 0 ; i <aList.size(); i ++){
          lbvo = aList.get(i);
-      
 %>			
             <tr>
-       
                <td align="center">
                <input type="checkbox" name="chkInLno" id="chkInLno"   value=<%= lbvo.getLno() %> onclick="checkOnly(this)"></td>
                <td align="center"><%=lbvo.getLno()%></td>
@@ -105,7 +103,6 @@
                <input type="hidden" name="ldeleteYN" id="ldeleteYN" value="<%=lbvo.getLdeleteYN()%>">
                <td  align="center"><%=lbvo.getLinsertdate()%></td>
                <td  align="center"><%=lbvo.getLupdatedate()%></td>
-         
             </tr>
 
 <%

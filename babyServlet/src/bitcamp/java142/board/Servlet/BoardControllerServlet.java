@@ -156,6 +156,8 @@ public class BoardControllerServlet extends HttpServlet {
 				linsertdate = lbvo.getLinsertdate();
 				lupdatedate = lbvo.getLupdatedate();
 				
+				System.out.println("lsubject >>> " + lsubject);
+				
 				
 				ArrayList<String> sList = new ArrayList<String>();
 				
@@ -176,13 +178,6 @@ public class BoardControllerServlet extends HttpServlet {
             	
             	
             }//end of update
-            
-            
-            //삭제 페에지로 가기
-            if("D".equals(ISUD.toUpperCase())){
-            	
-            }//end of delete
-            
 				
 				
 		}else if(request.getContentType().toLowerCase().startsWith("multipart/form-data")){
@@ -305,6 +300,7 @@ public class BoardControllerServlet extends HttpServlet {
 	        		linsertdate = mr.getParameter("linsertdate");
 	        		lupdatedate = mr.getParameter("lupdatedate");
 	        		
+	        		 System.out.println("lsubject" + lsubject);
 	        		
 	        		lbvo.setLno(lno);
 	        		lbvo.setLsubject(lsubject);

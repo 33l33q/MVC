@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
 <%@ page import ="bitcamp.java142.board.dao.LdbBoardDAO" %>
 <%@ page import ="bitcamp.java142.board.dao.LdbBoardDAOImpl" %>
 <%@ page import ="bitcamp.java142.board.vo.LdbBoardVO" %>
 <%@ page import ="bitcamp.java142.board.Servlet.BoardControllerServlet" %>
 <%@ page import ="bitcamp.java142.common.utils.FilePath" %>
-
 
 <%@ page import ="java.util.ArrayList" %>
 
@@ -25,7 +23,6 @@
 	
 	LdbBoardVO lbvo = new LdbBoardVO();
 	
-	
 	String lno = sList.get(0);
 	String lsubject = sList.get(1);
 	String lname = sList.get(2);
@@ -35,14 +32,10 @@
 	String linsertdate = sList.get(7);
 	String lupdatedate = sList.get(8);
 	
-	
-	
+	System.out.println("lsubject >>> : " + lsubject);
 
 %>
-
-	  	<script type="text/javascript" 
-           		src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		
+	  	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript">
 
 		$(document).ready(function(){
@@ -174,7 +167,7 @@
 				</tr>
 				<tr>
 	               <td align="center"><b>사진</b></td>
-					<td>&nbsp;&nbsp;<img src=<%=lphoto%> border=0></td>
+					<td>&nbsp;&nbsp;<img src="../<%=lphoto%>" style="max-width:90%;"></td>
                 </tr>
                 <tr>
 					<td align="center" colspan="2"><b>입력일</b> : <%=linsertdate%>
