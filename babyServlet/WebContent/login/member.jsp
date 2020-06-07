@@ -67,9 +67,6 @@
                alert("(log)비밀번호 확인 테스트");
                var lpwVal = $('#lpw').val();
                var reVal =$('#reLpw').val();
-               alert(lpwVal + " :  " + reVal);
-               
-               alert(lpwVal + " :  " + reVal);
                
                if(!lpwVal){
                   alert("비밀번호를 입력하세요");
@@ -86,7 +83,7 @@
                if(lpwVal == reVal ){
                   alert("비밀번호가 확인됐습니다");
                }else{ 
-                  alert("비밀번호를 다시 확인해주세요");
+                  alert("비밀번호를 다시 입력해주세요");
                }
             });//end of 비밀번호 체크
             
@@ -121,9 +118,6 @@
             
             function whenSuccess(Data){
                 alert("리턴데이터 >>> : " + Data);
-                $('#studenttest').html("화면에 리턴 데이터 출력 : " + Data);
-				
-                alert("studenttest");
                 
                 var dataCheck = $(Data).find("result").text();
                 var resultVar = eval(dataCheck);
@@ -164,6 +158,18 @@
                     return false;
                  }
                 
+                if(!$('#reLpw').val()){
+                    alert("비밀번호 확인을 입력하세요");
+                    $("#reLpw").focus();
+                    return false;
+                 }
+                
+                
+                if(!$('#lemailId').val()){
+                    alert("메일주소를 입력하세요");
+                    $("#lemailId").focus();
+                    return false;
+                 }
                 
             	$("#ISUD").val("I");
             	var ISUD = $("#ISUD").val();
@@ -200,42 +206,42 @@
       <form name="memberForm" id="memberForm" method="POST" enctype="multipart/form-data" >
          <table border="1" align="center">
              <tr>
-               <td colspan="2" align="center">가입정보</td>
+               <td colspan="2" align="center"><h3>가입정보</h3>*표시 항목은 필수 기입</td>
               </tr>
             <tr>
-               <td width = "100" align = "center">회원번호</td>
+               <td width = "150" align = "center"><b>회원번호</b></td>
                <td width = "350">
-				 &nbsp;<input type="text" name = "lmem" placeholder="* 수정/ 삭제/ 조회 시 회원번호 사용" size="30" readonly><br>
+				 &nbsp;<input type="text" name = "lmem" placeholder="* 수정/ 삭제/ 조회 시 회원번호 사용" size="30"><br>
                </td>
             </tr>
             <tr>
-               <td align="center">이름</td>
+               <td align="center"><b>*이름</b></td>
                <td>&nbsp;<input type="text" name ="lname" id="lname" size="30"></td>
             </tr>
             <tr>
-               <td align="center">아이디</td>
+               <td align="center"><b>*아이디</b></td>
                <td>&nbsp;<input type="text" name="lid" id="lid" size="30">
                        <input type="button" id="lidCheck" value="중복체크"></td>
             </tr>
             <tr>
-               <td align="center">비밀번호</td>
+               <td align="center"><b>*비밀번호</b></td>
                <td>&nbsp;<input type="password" name="lpw" id="lpw" size="30"></td>        
             </tr>
             <tr>
-               <td align="center">비밀번호확인</td>
+               <td align="center"><b>*비밀번호확인</b></td>
                <td>&nbsp;<input type="password" name="reLpw" id="reLpw" size="30">
                        <input type="button" id="lpwCheck" value="확인"></td>
             </tr>
             <tr>
-               <td align="center">전화번호</td>
+               <td align="center"><b>전화번호</b></td>
                <td>&nbsp;<input type="text" name="lhp" id="lhp"  size="30" placeholder="숫자만 입력하세요"></td>
             </tr>
             <tr>
-               <td align="center">생년월일</td>
+               <td align="center"><b>생년월일</b></td>
                <td>&nbsp;<input type="text" name="lbirth" id="lbirth"  size="30" placeholder="8자리로 입력하세요 (예시 20200101)"></td>
             </tr>
             <tr>
-               <td align="center">메일주소</td>
+               <td align="center"><b>*메일주소</b></td>
                <td>&nbsp;<input type="text" name="lemailId" id="lemailId" size="10">@
                <select name="selectEmail" id="selectEmail">
                		<option value="naver.com" selected>naver.com</option>
@@ -254,21 +260,21 @@
                </td>
             </tr>
             <tr>
-               <td align="center">우편번호</td>
+               <td align="center"><b>우편번호</b></td>
                <td>&nbsp;<input type="text" name="lpostno" id="lpostno"  size="25" >
                			&nbsp;&nbsp;<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
 						<span id="guide" style="color:#999"></span></td>
             </tr>
             <tr>
-               <td align="center">주소</td>
+               <td align="center"><b>주소</b></td>
                <td>&nbsp;<input type="text" name="lloadAddr" id="lloadAddr" size="30" readonly></td>
             </tr>
             <tr>
-               <td align="center">상세주소</td>
+               <td align="center"><b>상세주소</b></td>
                <td>&nbsp;<input type="text" name="laddr" id="laddr" size="30"></td>
             </tr>
             <tr>
-               <td align="center">사진</td>
+               <td align="center"><b>사진</b></td>
                <td>&nbsp;<input type="file" name="lphoto" id="lphoto"></td>
             </tr>               
             <tr>

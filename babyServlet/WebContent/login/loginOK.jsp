@@ -84,12 +84,11 @@
 	<body>
 		<form name="loginOK" id="loginOK" method="post" enctype="application/x-www-form-urlencoded">
 			<table align="center">
-				<tr><td><h3>로그인에 성공하셨습니당</h3></td></tr>
-				<tr><td>어서오세요 <%=lid %> 님
+				<tr><td align="center"><h3>로그인에 성공하셨습니다.</h3></td></tr>
+				<tr><td align="center">어서오세요 <b><%=lid %></b> 님
 					<input type="hidden" id="lid" name="lid" value=<%=lid%>>
 					<input type="hidden" id="lpw" name="lpw" value=<%=lpw%>></td>
 				</tr>
-				
 				<tr>
 					<td align="center"><input type="hidden" id="ISUD" name="ISUD" >
 						<input type="button" id="U" name="U" value="개인정보 수정">
@@ -100,6 +99,5 @@
 				</tr>
 			</table>
 		</form>
-	
 	</body>
 </html>

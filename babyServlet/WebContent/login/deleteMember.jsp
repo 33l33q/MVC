@@ -30,8 +30,8 @@
       			var ISUD = $("#ISUD").val();
 				alert("회원탈퇴");
 				
-      			$("#updateForm")
-      			.attr("action","../MemberControllerServlet")
+      			$("#deleteForm")
+      			.attr("action","./MemberControllerServlet")
       			.submit();
     		});
     		
@@ -41,7 +41,7 @@
         
                	
 	      		var ISUD = $("#ISUD").val("L");
-	    		$("#updateForm")
+	    		$("#deleteForm")
 	    		.attr("action","./MemberControllerServlet")
 	    		.submit();
                	
@@ -72,55 +72,55 @@
 		System.out.println(lname + lid + lpw + lhp + lbirth + lemail + lpostno + lloadAddr + laddr );
 
 %>
-		<form name="updateForm" id="updateForm" method="POST" enctype="multipart/form-data">
-			<table border="1" align="center">
+		<form name="deleteForm" id="deleteForm" method="POST" enctype="multipart/form-data">
+			<table border="1" align="center" width="600">
 					<tr>
-						<td colspan="2" align="center">회원정보</td>
+						<td colspan="2" align="center"><h3>회원정보</h3></td>
 					</tr>
 					<tr>
-						<td>회원번호</td>
+						<td align="center"><b>회원번호</b></td>
 						<td><%=lmem%></td>
 					</tr>
 					<tr>
-						<td>이름</td>
+						<td align="center"><b>이름</b></td>
 						<td><%=lname%></td>
 					</tr>
 					<tr>
-						<td>아이디</td>
-						<td><input type="text" name="lid" id="lid" size="20" value=<%=lid%> readonly></td>
+						<td align="center"><b>아이디</b></td>
+						<td><%=lid%><input type="hidden" name="lid" id="lid" size="20" value=<%=lid%>></td>
 					</tr>
 					<tr>
-						<td>비밀번호</td>
-						<td><input type="password" name="lpw" id="lpw" size="20" value=<%=lpw%> readonly></td>
+						<td align="center"><b>비밀번호</b></td>
+						<td><input type="password" name="checkLpw" id="checkLpw" size="20">
+							<input type="hidden" name="lpw" id="lpw" size="20" value=<%=lpw%>></td>
 					</tr>
 					<tr>
-						<td>전화번호</td>
+						<td align="center"><b>전화번호</b></td>
 						<td><%=lhp%></td>
 					</tr>
 					<tr>
-						<td>생년월일</td>
+						<td align="center"><b>생년월일</b></td>
 						<td><%=lbirth%></td>
 					</tr>
 					<tr>
-						<td>이메일</td>
+						<td align="center"><b>이메일</b></td>
 						<td><%=lemail%></td>
 					</tr>
 					<tr>
-						<td>우편번호</td>
+						<td align="center"><b>우편번호</b></td>
 						<td><%=lpostno%></td>
 					</tr>
 					<tr>
-						<td>지번주소</td>
+						<td align="center"><b>지번주소</b></td>
 						<td><%=lloadAddr %></td>
 					</tr>
 					<tr>
-						<td>상세 주소</td>
+						<td align="center"><b>상세 주소</b></td>
 						<td><%=laddr %></td>
 					</tr>
 					<tr>
-						<td>사진</td>
-						<td>
-						<img src=<%=lphoto%> border=0 width="100" height="100"></td>
+						<td align="center"><b>사진</b></td>
+						<td align="center"><img src=<%=lphoto%> width="100" height="100"></td>
 					</tr>
 					</table>
 					

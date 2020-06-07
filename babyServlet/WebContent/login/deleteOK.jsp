@@ -7,8 +7,17 @@
 		<title>deleteOK</title>
 	</head>
 	<body>
-		<center><h3>삭제 완료!</h3>
-			<a href= "../login/index.jsp" value="처음창으로 돌아가기"/>
-		</center>
+	
+			<form name="deleteOK" id="deleteOK" method="post" enctype="application/x-www-form-urlencoded">
+			<table align="center">
+				<tr><td align="center"><h3>탈퇴가 완료되었습니다.</h3></td></tr>
+				<tr>
+					<td align="center">
+						<a href="/babyServlet/login/member.jsp">회원가입</a>
+						<a href="/babyServlet/login/index.jsp">홈페이지</a>
+					</td>
+				</tr>
+			</table>
+		</form>
 	</body>
 </html>

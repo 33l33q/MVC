@@ -143,7 +143,7 @@
 			  	  <tr>
 			  	  <td colspan ="3" align="center"><h3>회원정보</h3></td>
 				  <tr>
-				   <td rowspan="5" width="200" align="center"> <img src="../../<%=lphoto%>" height="150">
+				   <td rowspan="5" width="200" align="center"> <img src="../babyServlet/<%=lphoto%>" height="150">
 				   					<input type="file" name="lphoto" id="lphoto" value=<%=lphoto%>>
 				   					<input type="hidden" name="reLphoto" id="reLphoto" value="<%=lphoto%>"></td>
 				    <td width="200"align="center"><b>회원번호</b></td>

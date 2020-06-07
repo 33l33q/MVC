@@ -17,7 +17,7 @@ public class LdbMemberVO {
 	private String ldeleteYN;
 	private String linsertdate;
 	private String lupdatedate;
-	private String checkLpw; //비밀번호 수정을 위한 비밀번호 확인용
+	private String checkLpw; //수정을 위한 입력용 비밀번호
 	
 	
 	public String getCheckLpw() {

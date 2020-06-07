@@ -133,7 +133,7 @@
                 .attr("action","./BoardControllerServlet")
                 .submit();
              });
-            
+
 		});
 		
 		</script>
@@ -167,7 +167,7 @@
 				</tr>
 				<tr>
 	               <td align="center"><b>사진</b></td>
-					<td>&nbsp;&nbsp;<img src="../<%=lphoto%>" style="max-width:90%;"></td>
+					<td>&nbsp;&nbsp;<img src="../babyServlet/<%=lphoto%>" style="max-width:90%;"></td>
                 </tr>
                 <tr>
 					<td align="center" colspan="2"><b>입력일</b> : <%=linsertdate%>

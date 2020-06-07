@@ -7,22 +7,23 @@
 %>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+						"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-		<title>1226jqueryIdCheck</title>
+		<title>jqueryIdCheck</title>
 	</head>
 	<body>
 <%
 	
 		String lid = request.getParameter("lid");
-		System.out.println(" jqueryIdCheck :: lid >>> " + lid);
+		System.out.println(" jqueryIdCheck : lid >>> " + lid);
 		
-		MemberControllerServlet bcs = new MemberControllerServlet();
+		MemberControllerServlet mcs = new MemberControllerServlet();
 		
 		
-		boolean bool = bcs.checkId(lid);
+		boolean bool = mcs.checkId(lid);
 		System.out.println("bool >>> " + bool);
 
 %>
@@ -31,3 +32,7 @@
 		<result><%=bool%></result>
 	</login>
 	</body>
+	
+	
+	
+	

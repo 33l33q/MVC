@@ -16,7 +16,7 @@
 			alert("boardMain.jsp 진입");
 		
 			$('.js-sms-content').keyup(function(){//keyup은 키보드를 눌렀다가 뗄 때에 영향을 주는 함수다
-				cut_300(this);
+				cut_2000(this);
 			});
 			
             $("#I_board").click(function(){
@@ -73,7 +73,7 @@
 				return len;
 			}
 			
-			function cut_300(obj){
+			function cut_2000(obj){
 				var text = $(obj).val();
 				var leng = text.length;
 				while(getTextLength(text) > 300){

@@ -20,7 +20,7 @@
 	$(document).ready(function(){
 	     
 		$('.js-sms-content').keyup(function(){//keyup은 키보드를 눌렀다가 뗄 때에 영향을 주는 함수다
-			cut_300(this);
+			cut_2000(this);
 		});
 		
 		$("#SS_board").click(function(){
@@ -65,7 +65,7 @@
 			return len;
 		}
 		
-		function cut_300(obj){
+		function cut_2000(obj){
 			var text = $(obj).val();
 			var leng = text.length;
 			while(getTextLength(text) > 2000){
@@ -78,6 +78,13 @@
 	});
      
      </script>
+     
+     <style type="text/css">
+            .tt{
+            text-align : center;
+            font-weight : bold;
+            }
+    </style>
      
 	<body>
 <%
@@ -108,28 +115,28 @@
 					<td colspan="2" align="center"><h3>글 수정하기</h3></td>
 				</tr>
 				<tr>
-					<td align="center" width="150">글번호</td>
-					<td><input type="text" name="lno" id="lno" size="20"  value="<%=lno%>" readonly></td>
+					<td class="tt" width="150">글번호</td>
+					<td><%=lno%><input type="hidden" name="lno" id="lno" size="20"  value="<%=lno%>"></td>
 				</tr>
 				<tr>
-					<td align="center">제목</td>
+					<td class="tt" >제목</td>
 					<td><input type="text" name="lsubject" id="lsubject" size="53" value="<%=lsubject%>"></td>
 				</tr>
 				<tr>
-					<td align="center">이름</td>
-					<td><input type="text" name="lname" id="lname" size="53" value="<%=lname%>" readonly></td>
+					<td class="tt" >이름</td>
+					<td><%=lname%><input type="hidden" name="lname" id="lname" size="53" value="<%=lname%>" readonly></td>
 				</tr>
 				<tr>
-					<td align="center">글 비밀번호</td>
-					<td><input type="password" name="lpw" id="lpw" size="20" value="<%=lpw %>" readonly></td>
+					<td class="tt" >글 비밀번호</td>
+					<td><input type="password" name="lpw" id="lpw" size="20" value="<%=lpw %>"></td>
 				</tr>
 				<tr>
-					<td align="center">입력일</td>
-					<td><input type="text" name="linsertdate" id="linsertdate" size="20" value="<%=linsertdate%>" readonly></td>
+					<td class="tt" >입력일</td>
+					<td><%=linsertdate%><input type="hidden" name="linsertdate" id="linsertdate" size="20" value="<%=linsertdate%>"></td>
 				</tr>
 				<tr>
-					<td align="center">수정일</td>
-					<td><input type="text" name="lupdatedate" id="lupdatedate" size="20" value="<%=lupdatedate%>" readonly></td>
+					<td class="tt" >수정일</td>
+					<td><%=lupdatedate%><input type="hidden" name="lupdatedate" id="lupdatedate" size="20" value="<%=lupdatedate%>"></td>
 				</tr>
 				<tr>
 					<td colspan="3" align="center">
@@ -140,8 +147,8 @@
 					</td>										
 				</tr>
 				<tr>
-	               <td align="center">사진</td>
-	               <td><img src="../<%=lphoto%>" style="max-width:90%;">
+	               <td class="tt" >사진</td>
+	               <td><img src="../babyServlet/<%=lphoto%>" style="max-width:90%;">
 	               &nbsp;<input type="file" name="lphoto" id="lphoto" value="<%=lphoto %>"></td>
                 </tr>
 				<tr>
@@ -149,9 +156,9 @@
 						<input type="hidden" id="ISUD" name="ISUD">
 						<input type="button" id="U_board" name="U_board" value="수정" >
 						<input type="button" id="D_board" name="D_board" value="삭제" >
-						<input type="button" id="SS_board" name="SS_board" value="글목록" >
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="reset" value="취소">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" id="SS_board" name="SS_board" value="글목록" >
 					</td>
 				</tr>
 			</table>

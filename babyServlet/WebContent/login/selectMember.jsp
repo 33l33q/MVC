@@ -75,7 +75,7 @@
 				<td><%=lvo.getLhp()%></td>
 				<td><%=lvo.getLbirth()%></td>
 				<td><%=lvo.getLemail()%></td>
-				<td><%=lvo.getLpostno()%></td>
+				<td align="center"><%=lvo.getLpostno()%></td>
 				<td><%=lvo.getLloadAddr() %> <%=lvo.getLaddr() %></td>
 				<td><img src="<%=lvo.getLphoto()%>" border=0 width="30" height="40"></td>
 		
@@ -85,7 +85,7 @@
 				}
 %>
 				<tr>
-					<td colspan="16" align="right" length="20">
+					<td colspan="16" align="center">
 					<input type="button" value="로그인창" id="moveLogin" name="moveLogin">
 					<input type="button" value="홈페이지" id="moveIndex" name="moveIndex">
 					<input type="button" value="회원가입" id="moveJoin" name="moveJoin">

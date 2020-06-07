@@ -43,6 +43,15 @@
 	        $(location).attr('href', "./board/boradMain.jsp");
 
 	     });
+	    
+	    $("#H_board").click(function(){
+	        alert("(log)글 작성하기");
+	    	
+	        $(location).attr('href', "./login/index.jsp");
+
+	     });
+	    
+	    
 	});
 
     </script>
@@ -113,8 +122,9 @@
                <td colspan="10" align="center">
                   <input type="hidden" id="ISUD" name="ISUD">
                   <input type="button" id="S_board" name="S_board" value="상세 조회" >
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <input type="button" id="I_board" name="I_board" value="작성" >
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="button" id="H_board" name="H_board" value="홈페이지" >
                   </td>
             </tr>
          </table>

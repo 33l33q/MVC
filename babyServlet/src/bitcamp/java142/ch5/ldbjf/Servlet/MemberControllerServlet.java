@@ -458,11 +458,14 @@ public class MemberControllerServlet extends HttpServlet {
             	
             	System.out.println("삭제 서블릿 진입");
             	
+            	String checkLpw = "";
+            	
                 lid = mr.getParameter("lid");
-                lpw = mr.getParameter("lpw");
+                lpw = mr.getParameter("lpw");// 로그인시 사용한 비밀번호 정보
+                checkLpw = mr.getParameter("checkLpw"); //사용자가 탈퇴하기 위해 입력한 비밀번호
 
                 lvo.setLid(lid);
-                lvo.setLpw(lpw);
+                lvo.setLpw(checkLpw);
 
                 System.out.println("lvo.getLid " + lvo.getLid());
                 
@@ -475,7 +478,6 @@ public class MemberControllerServlet extends HttpServlet {
                 	lpw="";
   	              	RequestDispatcher rd = request.getRequestDispatcher("/login/deleteOK.jsp");
   	              	rd.forward(request, response);
-//                	response.sendRedirect("/login/deleteOK.jsp");
                 	
                 }else{
                 	 System.out.println("탈퇴 실패");
@@ -534,7 +536,7 @@ public class MemberControllerServlet extends HttpServlet {
    
    public boolean checkId(String lid){
          
-      System.out.println("(log)서블릿 진입");
+      System.out.println("(log)아이디 중복체크 서블릿 진입");
       LdbMemberDAO ldao = new LdbMemberDAOImpl();
       LdbMemberVO lvo = null;
       lvo = new LdbMemberVO();
