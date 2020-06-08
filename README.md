@@ -1,47 +1,71 @@
-# ÇÁ·ÎÁ§Æ®¸í : **Java Model1 web application**
-> Model2 patternÀ» ±â¹İÀ¸·Î ÇÑ web ÀÀ¿ë ÇÁ·Î±×·¥ ¸¸µé±â
+# í”„ë¡œì íŠ¸ëª… : **Java Model2 web application**
+> Model2 patternì„ ê¸°ë°˜ìœ¼ë¡œ í•œ web ì‘ìš© í”„ë¡œê·¸ë¨ ë§Œë“¤ê¸°
 
-## 1.¿ä°ÇÁ¤¸®
-> - ¸ñÀû :  ¿¹»ó ÀÌ¿ëÀÚ 100¸í ³»¿Ü¸¦ ´ë»óÀ¸·ÎÇÑ À¥ °Ô½ÃÆÇ ±¸Ãà
-> - ±¸Á¶ :  MODEL2 - MVC patternÀ» ±â¹İ
-> - ±â´É : »ç¿ëÀÚ CRUD(ÀÔ·Â, ¼öÁ¤, »èÁ¦, ÀüÃ¼Á¶È¸, °Ë»ö, like°Ë»ö) ¹× °Ô½Ã±Û CRUD(ÀÔ·Â, ¼öÁ¤, »èÁ¦, Á¶È¸)
-		ºñ¹Ğ¹øÈ£ 
-> - Á¦ÀÛ ±â°£ : 36½Ã°£
+## 1.ìš”ê±´ì •ë¦¬
+> - ëª©ì  :  ì˜ˆìƒ ì´ìš©ì 100ëª… ë‚´ì™¸ë¥¼ ëŒ€ìƒìœ¼ë¡œí•œ ì›¹ ê²Œì‹œíŒ êµ¬ì¶•
+> - êµ¬ì¡° :  MODEL2 - MVC patternì„ ê¸°ë°˜
+> - ê¸°ëŠ¥ : ì‚¬ìš©ì CRUD(ì…ë ¥, ìˆ˜ì •, ì‚­ì œ, ì „ì²´ì¡°íšŒ, ê²€ìƒ‰, likeê²€ìƒ‰) ë° ê²Œì‹œê¸€ CRUD(ì…ë ¥, ìˆ˜ì •, ì‚­ì œ, ì¡°íšŒ)
+		ë¹„ë°€ë²ˆí˜¸ 
+> - ì œì‘ ê¸°ê°„ : 36ì‹œê°„
 
-Å×ÀÌºí Á¤ÀÇ¼­
+í…Œì´ë¸” ì •ì˜ì„œ
  
-> 1. È¸¿øÁ¤º¸ Å×ÀÌºí
-ÄÃ·³ID		|	µ¥ÀÌÅÍ Å¸ÀÔ(Å©±â)		|	ÄÃ·³¸í
+> 1. íšŒì›ì •ë³´ í…Œì´ë¸”
+
+
+ì»¬ëŸ¼ID		|	ë°ì´í„° íƒ€ì…(í¬ê¸°)		|	ì»¬ëŸ¼ëª…
 ----- 		|	--------		|	---
-LMEM		|	VARCHAR2(13 BYTE)	|	È¸¿ø¹øÈ£	
-LNAME		|	VARCHAR2(20 BYTE)	|	¼º¸í	
-LID		|	VARCHAR2(20 BYTE)	|	¾ÆÀÌµğ	
-LPW		|	VARCHAR2(20 BYTE)	|	ºñ¹Ğ¹øÈ£	
-LHP		|	VARCHAR2(20 BYTE)	|	ÀüÈ­¹øÈ£	
-LBIRTH		|	VARCHAR2(8 BYTE)	|	»ı³â¿ùÀÏ	
-LEMAIL		|	VARCHAR2(20 BYTE)	|	ÀÌ¸ŞÀÏ	
-LPOSTNO		|	VARCHAR2(5 BYTE)	|	¿ìÆí¹øÈ£	
-LLOADADDR	|	VARCHAR2(300 BYTE)	|	µµ·Î¸íÁÖ¼Ò	
-LADDR		|	VARCHAR2(300 BYTE)	|	»ó¼¼ÁÖ¼Ò	
-LPHOTO		|	VARCHAR2(500 BYTE)	|	»çÁø	
-LDELETEYN	|	VARCHAR2(1 BYTE)	|	»èÁ¦À¯¹«	
-LINSERTDATE	|	DATE			|	»ı¼ºÀÏ	
-LUPDATEDATE	|	DATE			|	¼öÁ¤ÀÏ	
+LMEM		|	VARCHAR2(13 BYTE)	|	íšŒì›ë²ˆí˜¸	
+LNAME		|	VARCHAR2(20 BYTE)	|	ì„±ëª…	
+LID		|	VARCHAR2(20 BYTE)	|	ì•„ì´ë””	
+LPW		|	VARCHAR2(20 BYTE)	|	ë¹„ë°€ë²ˆí˜¸	
+LHP		|	VARCHAR2(20 BYTE)	|	ì „í™”ë²ˆí˜¸	
+LBIRTH		|	VARCHAR2(8 BYTE)	|	ìƒë…„ì›”ì¼	
+LEMAIL		|	VARCHAR2(20 BYTE)	|	ì´ë©”ì¼	
+LPOSTNO		|	VARCHAR2(5 BYTE)	|	ìš°í¸ë²ˆí˜¸	
+LLOADADDR	|	VARCHAR2(300 BYTE)	|	ë„ë¡œëª…ì£¼ì†Œ	
+LADDR		|	VARCHAR2(300 BYTE)	|	ìƒì„¸ì£¼ì†Œ	
+LPHOTO		|	VARCHAR2(500 BYTE)	|	ì‚¬ì§„	
+LDELETEYN	|	VARCHAR2(1 BYTE)	|	ì‚­ì œìœ ë¬´	
+LINSERTDATE	|	DATE			|	ìƒì„±ì¼	
+LUPDATEDATE	|	DATE			|	ìˆ˜ì •ì¼	
 						
-> 2. °Ô½Ã±Û Á¤º¸ Å×ÀÌºí 						
+> 2. ê²Œì‹œê¸€ ì •ë³´ í…Œì´ë¸” 						
 						
-ÄÃ·³ID		|	µ¥ÀÌÅÍ Å¸ÀÔ(Å©±â)		|	ÄÃ·³¸í
+ì»¬ëŸ¼ID		|	ë°ì´í„° íƒ€ì…(í¬ê¸°)		|	ì»¬ëŸ¼ëª…
 ----- 		|	--------		|	---
-LNO		|	VARCHAR2(10 BYTE)	|	±Û¹øÈ£	
-LSUBJECT	|	VARCHAR2(1000 BYTE)	|	±ÛÁ¦¸ñ	
-LNAME		|	VARCHAR2(300 BYTE)	|	ÀÛ¼ºÀÚ	
-LPW		|	VARCHAR2(400 BYTE)	|	ºñ¹Ğ¹øÈ£	
-LMEMO		|	VARCHAR2(4000 BYTE)	|	±Û³»¿ë	
-LPHOTO		|	VARCHAR2(500 BYTE)	|	»çÁø	
-LDELETEYN	|	VARCHAR2(1 BYTE)	|	»èÁ¦À¯¹«	
-LINSERTDATE	|	DATE			|	»ı¼ºÀÏ
-LUPDATEDATE	|	DATE			|	¼öÁ¤ÀÏ
+LNO		|	VARCHAR2(10 BYTE)	|	ê¸€ë²ˆí˜¸	
+LSUBJECT	|	VARCHAR2(1000 BYTE)	|	ê¸€ì œëª©	
+LNAME		|	VARCHAR2(300 BYTE)	|	ì‘ì„±ì	
+LPW		|	VARCHAR2(400 BYTE)	|	ë¹„ë°€ë²ˆí˜¸	
+LMEMO		|	VARCHAR2(4000 BYTE)	|	ê¸€ë‚´ìš©	
+LPHOTO		|	VARCHAR2(500 BYTE)	|	ì‚¬ì§„	
+LDELETEYN	|	VARCHAR2(1 BYTE)	|	ì‚­ì œìœ ë¬´	
+LINSERTDATE	|	DATE			|	ìƒì„±ì¼
+LUPDATEDATE	|	DATE			|	ìˆ˜ì •ì¼
 
 
 
-## 2. °³¹ßÈ¯°æ : Eclipse Neon3, jdk 1.8, oracle 11g R2, apach-tomcat 8.0, window10, HMTL5, jsp, cos 20.0, Daum Open API, Servlet 3.1, jQuery
+## 2. ê°œë°œí™˜ê²½ : Eclipse Neon3, jdk 1.8, oracle 11g R2, apach-tomcat 8.0, window10, HMTL5, jsp, cos 20.0, Daum Open API, Servlet 3.1, jQuery
+
+
+## 3. ì‹¤í–‰í™”ë©´
+
+- 1-1 ë©”ì¸í™”ë©´
+![ìŠ¬ë¼ì´ë“œ1](https://user-images.githubusercontent.com/62315622/84040217-5197f080-a9dd-11ea-81d2-cc9f3aa57230.JPG)
+
+- 2-1 íšŒì›ê´€ë¦¬_íšŒì›ê°€ì…
+![ìŠ¬ë¼ì´ë“œ2](https://user-images.githubusercontent.com/62315622/84040223-53fa4a80-a9dd-11ea-856c-5ffd9f3d91ee.JPG)
+![ìŠ¬ë¼ì´ë“œ3](https://user-images.githubusercontent.com/62315622/84040227-552b7780-a9dd-11ea-831a-829b95d1f183.JPG)
+
+- 2-2 íšŒì›ê´€ë¦¬_ì „ì²´ì¡°íšŒ
+![ìŠ¬ë¼ì´ë“œ4](https://user-images.githubusercontent.com/62315622/84040231-55c40e00-a9dd-11ea-858d-3836160aa67d.JPG)
+
+- 2-3 íšŒì›ê´€ë¦¬_ê°œì¸ì •ë³´ìˆ˜ì •
+![ìŠ¬ë¼ì´ë“œ5](https://user-images.githubusercontent.com/62315622/84040233-55c40e00-a9dd-11ea-9263-6bafda51ff31.JPG)
+
+- 2-4 íšŒì›ê´€ë¦¬_íƒˆí‡´
+![ìŠ¬ë¼ì´ë“œ6](https://user-images.githubusercontent.com/62315622/84040238-565ca480-a9dd-11ea-91b4-30d75f98ac10.JPG)
+
+- 3-1 ê²Œì‹œíŒê´€ë¦¬_ì „ì²´ì¡°íšŒ
+![ìŠ¬ë¼ì´ë“œ7](https://user-images.githubusercontent.com/62315622/84040242-56f53b00-a9dd-11ea-99c1-2b4f2406f707.JPG)
