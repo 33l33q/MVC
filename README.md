@@ -45,6 +45,9 @@ LINSERTDATE	|	DATE			|	생성일
 LUPDATEDATE	|	DATE			|	수정일
 
 
+시스템 아키텍쳐
+![슬라이드12](https://user-images.githubusercontent.com/62315622/84184699-cdbb3280-aac8-11ea-8021-314cbbf4a69e.PNG)
+
 
 ## 2. 개발환경 : Eclipse Neon3, jdk 1.8, oracle 11g R2, apach-tomcat 8.0, window10, HMTL5, jsp, cos 20.0, Daum Open API, Servlet 3.1, jQuery
 
@@ -52,20 +55,34 @@ LUPDATEDATE	|	DATE			|	수정일
 ## 3. 실행화면
 
 - 1-1 메인화면
-![슬라이드1](https://user-images.githubusercontent.com/62315622/84040217-5197f080-a9dd-11ea-81d2-cc9f3aa57230.JPG)
+![슬라이드1](https://user-images.githubusercontent.com/62315622/84184701-ce53c900-aac8-11ea-8a79-dfd4a704faad.PNG)
 
 - 2-1 회원관리_회원가입
-![슬라이드2](https://user-images.githubusercontent.com/62315622/84040223-53fa4a80-a9dd-11ea-856c-5ffd9f3d91ee.JPG)
-![슬라이드3](https://user-images.githubusercontent.com/62315622/84040227-552b7780-a9dd-11ea-831a-829b95d1f183.JPG)
+![슬라이드2](https://user-images.githubusercontent.com/62315622/84184704-ceec5f80-aac8-11ea-8c98-cafeed6ae264.PNG)
+![슬라이드3](https://user-images.githubusercontent.com/62315622/84184705-cf84f600-aac8-11ea-9d0a-d9b0980b7bbe.PNG)
 
 - 2-2 회원관리_전체조회
-![슬라이드4](https://user-images.githubusercontent.com/62315622/84040231-55c40e00-a9dd-11ea-858d-3836160aa67d.JPG)
+![슬라이드4](https://user-images.githubusercontent.com/62315622/84184706-d01d8c80-aac8-11ea-86de-b2891e166526.PNG)
 
 - 2-3 회원관리_개인정보수정
-![슬라이드5](https://user-images.githubusercontent.com/62315622/84040233-55c40e00-a9dd-11ea-9263-6bafda51ff31.JPG)
+![슬라이드5](https://user-images.githubusercontent.com/62315622/84184707-d0b62300-aac8-11ea-82b5-42cfb5c010f7.PNG)
 
 - 2-4 회원관리_탈퇴
-![슬라이드6](https://user-images.githubusercontent.com/62315622/84040238-565ca480-a9dd-11ea-91b4-30d75f98ac10.JPG)
+![슬라이드6](https://user-images.githubusercontent.com/62315622/84184708-d0b62300-aac8-11ea-8980-dfdc6712abee.PNG)
 
 - 3-1 게시판관리_전체조회
-![슬라이드7](https://user-images.githubusercontent.com/62315622/84040242-56f53b00-a9dd-11ea-99c1-2b4f2406f707.JPG)
+![슬라이드7](https://user-images.githubusercontent.com/62315622/84184709-d14eb980-aac8-11ea-86e4-7706da7e3ee5.PNG)
+
+- 3-2 게시판관리_상세조회
+![슬라이드8](https://user-images.githubusercontent.com/62315622/84184691-ca27ab80-aac8-11ea-89dc-798f8688fe0f.PNG)
+
+- 3-3 게시판관리_수정페이지
+![슬라이드9](https://user-images.githubusercontent.com/62315622/84184693-cc8a0580-aac8-11ea-89a9-69d5704733e4.PNG)
+
+- 3-4 게시판관리_글 수정하기
+![슬라이드11](https://user-images.githubusercontent.com/62315622/84184695-cd229c00-aac8-11ea-8a9f-6852ffeebe96.PNG)
+
+- 3-5 게시판관리_글 삭제하기
+![슬라이드10](https://user-images.githubusercontent.com/62315622/84184694-cd229c00-aac8-11ea-92e2-d093a236c741.PNG)
+
+
